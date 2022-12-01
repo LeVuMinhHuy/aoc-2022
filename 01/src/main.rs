@@ -35,8 +35,7 @@ fn main() {
 
     println!("Max calories: {max}");
 
-    bubble_sort(&mut total_calories_list);
-    // Q: Do we need to pass `total_calories_list.as_mut_slice()`
+    bubble_sort(total_calories_list.as_mut_slice());
 
     if !(total_calories_list.len() > 2) {
         panic!("You did something wrong!");
@@ -53,8 +52,7 @@ fn main() {
     );
 }
 
-// Q: Do we need to pass `list: &must [u32]`
-fn bubble_sort(list: &mut Vec<u32>) {
+fn bubble_sort(list: &mut [u32]) {
     let length = list.len();
     for i in 0..length {
         for j in 0..(length - i - 1) {
