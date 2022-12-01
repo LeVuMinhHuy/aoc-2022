@@ -7,7 +7,7 @@ fn main() {
 
     let input = fs::read_to_string("./input.txt").expect("Should have been able to read the file");
     let inventories: Vec<&str> = input.split("\n").collect();
-    let mut total_calories_list: Vec<u32> = Vec::with_capacity(inventories.len());
+    let mut total_calories_list: Vec<u32> = Vec::new();
 
     let mut sum: u32 = 0;
     for inventory in inventories {
